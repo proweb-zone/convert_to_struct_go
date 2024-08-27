@@ -2,8 +2,9 @@ package handlers
 
 import (
 	"fmt"
-	"json_converter/internal/domain/usecase"
 	"os"
+
+	"github.com/proweb-zone/convert_to_struct_go/internal/domain/usecase"
 )
 
 func CliConverterHandler() {
