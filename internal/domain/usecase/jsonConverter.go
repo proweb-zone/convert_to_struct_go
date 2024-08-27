@@ -1,6 +1,12 @@
 package usecase
 
-import "fmt"
+import (
+	"bufio"
+	"bytes"
+	"fmt"
+	"json_converter/internal/domain/model"
+	"os"
+)
 
 type Converter struct {
 	PathIn  string
@@ -18,12 +24,28 @@ func InitJSonConverter(pathIn string, pathOut string) *Converter {
 
 func (c *Converter) JsonConverter() {
 	fmt.Println("конвертируем в структуру json")
-	// получаем json из файла и отправляем его в модель конвертера
-	// подготовленную структуру сохраняем в файл
+	jsonFile := openFile(c.PathIn)
+	model.JsonToStructModel(jsonFile)
 }
 
 func (c *Converter) XmlConverter() {
 	fmt.Println("конвертируем в структуру xml")
 	// получаем xml из файла и отправляем его в модель конвертера
 	// подготовленную структуру сохраняем в файл
+}
+
+func openFile(path string) string {
+	f, err := os.Open(path)
+	if err != nil {
+		fmt.Println("Ошибка открытия файла")
+	}
+	defer f.Close()
+
+	wr := bytes.Buffer{}
+	sc := bufio.NewScanner(f)
+	for sc.Scan() {
+		wr.WriteString(sc.Text())
+	}
+
+	return wr.String()
 }

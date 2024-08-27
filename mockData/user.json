@@ -3,5 +3,6 @@
 	      "details": {
 	          "age": 25,
 	          "job": "Engineer"
-	      }
+	      },
+        "lastName": "Wax"
 	  }
