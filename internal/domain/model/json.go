@@ -6,7 +6,7 @@ import (
 	"reflect"
 )
 
-func JsonToStructModel(jsonData string) {
+func JsonToStructModel(jsonData string) (buildStruct string, err error) {
 
 	req := map[string]interface{}{}
 	json.Unmarshal([]byte(jsonData), &req)
@@ -20,6 +20,7 @@ func JsonToStructModel(jsonData string) {
 		}
 	}
 
+	return "", nil
 }
 
 func prepairData(data interface{}) {
