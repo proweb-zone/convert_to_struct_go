@@ -22,6 +22,6 @@ func CliConverterHandler() {
 	case "-json":
 		converter.JsonConverter()
 	case "-xml":
-		converter.XmlConverter()
+		// converter.XmlConverter()
 	}
 }
