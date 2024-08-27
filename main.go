@@ -1,7 +1,7 @@
 package main
 
 import (
-	"json_converter/internal/handlers"
+	"github.com/proweb-zone/convert_to_struct_go/internal/handlers"
 )
 
 func main() {

@@ -4,8 +4,9 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	"json_converter/internal/domain/model"
 	"os"
+
+	"github.com/proweb-zone/convert_to_struct_go/internal/domain/model"
 )
 
 type Converter struct {
